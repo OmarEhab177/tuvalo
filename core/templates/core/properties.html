@@ -1,0 +1,138 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-primary text-white py-5 text-center mt-5 pt-5">
+    <div class="container py-4">
+        <h1 class="display-4 fw-bold">All Properties</h1>
+        <p class="lead text-white-50">Browse our complete collection of exclusive real estate listings.</p>
+    </div>
+</section>
+
+<!-- Properties Listing Section -->
+<section class="py-5 bg-light min-vh-100">
+    <div class="container py-4">
+
+        <!-- Filters (Static Example) -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm rounded-4 p-4 text-center">
+                    <p class="text-muted mb-0"><i class="fas fa-filter text-primary me-2"></i> Find your perfect property by selecting the options below (Demo Feature Only).</p>
+                    <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+                        <button class="btn btn-outline-primary rounded-pill px-4 active">All</button>
+                        <button class="btn btn-outline-primary rounded-pill px-4">Villas</button>
+                        <button class="btn btn-outline-primary rounded-pill px-4">Penthouses</button>
+                        <button class="btn btn-outline-primary rounded-pill px-4">Apartments</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Property Card 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm property-card rounded-4 overflow-hidden">
+                    <div class="position-relative overflow-hidden property-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top property-img" alt="Modern Villa">
+                        <div class="position-absolute top-0 end-0 m-3 px-3 py-1 bg-warning text-dark fw-bold rounded-pill shadow-sm">Featured</div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="card-title fw-bold mb-2">Modern Villa Estate</h4>
+                        <p class="card-text text-muted mb-4"><i class="fas fa-map-marker-alt text-primary me-2"></i> Beverly Hills, CA</p>
+                        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                            <span class="fs-5 fw-bold text-primary">$2,450,000</span>
+                            <span class="text-muted"><i class="fas fa-bed me-1"></i> 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Property Card 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm property-card rounded-4 overflow-hidden">
+                    <div class="position-relative overflow-hidden property-img-wrapper">
+                         <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top property-img" alt="Luxury Penthouse">
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="card-title fw-bold mb-2">Luxury Penthouse</h4>
+                        <p class="card-text text-muted mb-4"><i class="fas fa-map-marker-alt text-primary me-2"></i> Downtown NY</p>
+                        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                            <span class="fs-5 fw-bold text-primary">$3,100,000</span>
+                            <span class="text-muted"><i class="fas fa-bed me-1"></i> 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Property Card 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm property-card rounded-4 overflow-hidden">
+                    <div class="position-relative overflow-hidden property-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600607687931-cebf58145717?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top property-img" alt="Suburban Family Home">
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="card-title fw-bold mb-2">Suburban Retreat</h4>
+                        <p class="card-text text-muted mb-4"><i class="fas fa-map-marker-alt text-primary me-2"></i> Austin, TX</p>
+                        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                            <span class="fs-5 fw-bold text-primary">$1,250,000</span>
+                            <span class="text-muted"><i class="fas fa-bed me-1"></i> 5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Static Listings -->
+            <!-- Property Card 4 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm property-card rounded-4 overflow-hidden">
+                    <div class="position-relative overflow-hidden property-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top property-img" alt="Countryside Estate">
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="card-title fw-bold mb-2">Countryside Estate</h4>
+                        <p class="card-text text-muted mb-4"><i class="fas fa-map-marker-alt text-primary me-2"></i> Nashville, TN</p>
+                        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                            <span class="fs-5 fw-bold text-primary">$1,850,000</span>
+                            <span class="text-muted"><i class="fas fa-bed me-1"></i> 6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Card 5 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm property-card rounded-4 overflow-hidden">
+                    <div class="position-relative overflow-hidden property-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top property-img" alt="Oceanfront Condo">
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="card-title fw-bold mb-2">Oceanfront Condo</h4>
+                        <p class="card-text text-muted mb-4"><i class="fas fa-map-marker-alt text-primary me-2"></i> Miami, FL</p>
+                        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                            <span class="fs-5 fw-bold text-primary">$950,000</span>
+                            <span class="text-muted"><i class="fas fa-bed me-1"></i> 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Card 6 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm property-card rounded-4 overflow-hidden">
+                    <div class="position-relative overflow-hidden property-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top property-img" alt="Urban Apartment">
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="card-title fw-bold mb-2">Urban Loft</h4>
+                        <p class="card-text text-muted mb-4"><i class="fas fa-map-marker-alt text-primary me-2"></i> Seattle, WA</p>
+                        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                            <span class="fs-5 fw-bold text-primary">$720,000</span>
+                            <span class="text-muted"><i class="fas fa-bed me-1"></i> 1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

@@ -10,4 +10,4 @@ env/
 # Python
 __pycache__
 
-*.sqlite
+*.sqlite3

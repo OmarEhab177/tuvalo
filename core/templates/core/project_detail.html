@@ -1,0 +1,124 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header d-flex align-items-center" style="background: linear-gradient(rgba(11, 19, 43, 0.85), rgba(28, 37, 65, 0.85)), url('{{ project.image.url }}') center/cover;">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold text-white mb-3">{{ project.name }}</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'core:landing_page' %}" class="text-warning text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'core:all_cities' %}" class="text-warning text-decoration-none">Cities</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'core:city_detail' project.city.id %}" class="text-warning text-decoration-none">{{ project.city.name }}</a></li>
+                <li class="breadcrumb-item active text-white-50" aria-current="page">{{ project.name }}</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Project Details -->
+<section class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Project Images -->
+            <div class="col-lg-7">
+                <div class="mb-4">
+                    <img src="{{ project.image.url }}" class="img-fluid rounded-4 shadow-lg w-100 project-detail-img" alt="{{ project.name }}">
+                </div>
+                {% if project.masterplan_image %}
+                <div>
+                    <h5 class="fw-bold mb-3"><i class="fas fa-drafting-compass text-primary me-2"></i> Master Plan</h5>
+                    <img src="{{ project.masterplan_image.url }}" class="img-fluid rounded-4 shadow-lg w-100 project-detail-img" alt="{{ project.name }} Master Plan">
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Project Info -->
+            <div class="col-lg-5">
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden sticky-top" style="top: 120px;">
+                    <div class="card-header bg-primary text-white p-4">
+                        <h3 class="fw-bold mb-1">{{ project.name }}</h3>
+                        <p class="mb-0 text-white-50"><i class="fas fa-city me-2"></i>{{ project.city.name }}</p>
+                    </div>
+                    <div class="card-body p-4">
+                        <!-- Location -->
+                        <div class="detail-item mb-4">
+                            <h6 class="fw-bold text-primary text-uppercase mb-2">
+                                <i class="fas fa-map-marker-alt me-2"></i> Location
+                            </h6>
+                            <p class="text-muted mb-0">{{ project.location|linebreaksbr }}</p>
+                        </div>
+
+                        <!-- Area -->
+                        <div class="detail-item mb-4">
+                            <h6 class="fw-bold text-primary text-uppercase mb-2">
+                                <i class="fas fa-vector-square me-2"></i> Area
+                            </h6>
+                            <p class="text-muted mb-0">{{ project.area }}</p>
+                        </div>
+
+                        {% if project.building_ratio %}
+                        <!-- Building Ratio -->
+                        <div class="detail-item mb-4">
+                            <h6 class="fw-bold text-primary text-uppercase mb-2">
+                                <i class="fas fa-percentage me-2"></i> Building Ratio
+                            </h6>
+                            <p class="text-muted mb-0">{{ project.building_ratio }}</p>
+                        </div>
+                        {% endif %}
+
+                        {% if project.composition %}
+                        <!-- Composition -->
+                        <div class="detail-item mb-4">
+                            <h6 class="fw-bold text-primary text-uppercase mb-2">
+                                <i class="fas fa-building me-2"></i> Composition
+                            </h6>
+                            <p class="text-muted mb-0">{{ project.composition }}</p>
+                        </div>
+                        {% endif %}
+
+                        {% if project.floors %}
+                        <!-- Floors -->
+                        <div class="detail-item mb-4">
+                            <h6 class="fw-bold text-primary text-uppercase mb-2">
+                                <i class="fas fa-layer-group me-2"></i> Floors
+                            </h6>
+                            <p class="text-muted mb-0">{{ project.floors }}</p>
+                        </div>
+                        {% endif %}
+
+                        {% if project.unit_sizes %}
+                        <!-- Unit Sizes -->
+                        <div class="detail-item mb-4">
+                            <h6 class="fw-bold text-primary text-uppercase mb-2">
+                                <i class="fas fa-ruler-combined me-2"></i> Unit Sizes
+                            </h6>
+                            <p class="text-muted mb-0">{{ project.unit_sizes }}</p>
+                        </div>
+                        {% endif %}
+
+                        {% if project.payment_plan %}
+                        <!-- Payment Plan -->
+                        <div class="detail-item mb-3">
+                            <h6 class="fw-bold text-primary text-uppercase mb-2">
+                                <i class="fas fa-credit-card me-2"></i> Payment Plan
+                            </h6>
+                            <div class="text-muted payment-plan-text">{{ project.payment_plan|linebreaksbr }}</div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="card-footer bg-white p-4 border-0">
+                        <a href="#contact" class="btn btn-primary btn-lg w-100 rounded-pill fw-bold custom-btn">
+                            <i class="fas fa-envelope me-2"></i> Inquire About This Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Us Section -->
+{% include 'core/_contact_form.html' %}
+{% endblock %}

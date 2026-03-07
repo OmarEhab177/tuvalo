@@ -186,3 +186,108 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.1);
     box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.4);
 }
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(rgba(11, 19, 43, 0.9), rgba(28, 37, 65, 0.9));
+    min-height: 350px;
+    padding-top: 120px;
+}
+
+/* City Cards */
+.city-card {
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.city-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.city-img-wrapper {
+    height: 300px;
+    position: relative;
+}
+
+.city-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.city-card:hover .city-img {
+    transform: scale(1.08);
+}
+
+.city-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 30%, rgba(11, 19, 43, 0.85) 100%);
+    transition: background 0.4s ease;
+}
+
+.city-card:hover .city-overlay {
+    background: linear-gradient(transparent 10%, rgba(11, 19, 43, 0.9) 100%);
+}
+
+/* Project Cards */
+.project-card {
+    transition: all 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important;
+}
+
+.project-img-wrapper {
+    height: 250px;
+    overflow: hidden;
+}
+
+.project-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+.masterplan-thumb {
+    max-height: 150px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Project Detail Page */
+.project-detail-img {
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.detail-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.payment-plan-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Breadcrumb styling */
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.5);
+}

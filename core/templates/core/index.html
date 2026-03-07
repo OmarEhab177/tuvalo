@@ -8,7 +8,7 @@
     <div class="container text-center hero-content">
         <h1 class="display-3 fw-bold text-white mb-4 animate-fade-in">Discover Your Dream Home in <span class="brand-text text-warning">Tuvalo City</span></h1>
         <p class="lead text-white-50 mb-5 fs-4 animate-fade-in-delayed">Experience luxury, comfort, and the finest real estate offerings tailored for your lifestyle.</p>
-        <a href="#products" class="btn btn-warning btn-lg custom-btn animate-fade-in-delayed px-5 py-3 rounded-pill fw-bold text-uppercase">Explore Properties</a>
+        <a href="#cities" class="btn btn-warning btn-lg custom-btn animate-fade-in-delayed px-5 py-3 rounded-pill fw-bold text-uppercase">Explore Cities</a>
     </div>
 </section>
 
@@ -46,146 +46,43 @@
     </div>
 </section>
 
-<!-- Products Section -->
-<section id="products" class="py-5 bg-white">
+<!-- Cities Section -->
+<section id="cities" class="py-5 bg-white">
     <div class="container py-5">
         <div class="text-center mb-5">
-            <h6 class="text-uppercase text-primary fw-bold mb-2">Featured Properties</h6>
-            <h2 class="display-5 fw-bold">Explore Our Handpicked Listings</h2>
+            <h6 class="text-uppercase text-primary fw-bold mb-2">Our Locations</h6>
+            <h2 class="display-5 fw-bold">Explore Top Cities</h2>
             <div class="divider mx-auto bg-primary mt-3 mb-4 rounded" style="height: 3px; width: 60px;"></div>
         </div>
         <div class="row g-4">
-            <!-- Property Card 1 -->
+            {% for city in top_cities %}
             <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm property-card rounded-4 overflow-hidden">
-                    <div class="position-relative overflow-hidden property-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top property-img" alt="Modern Villa">
-                        <div class="position-absolute top-0 end-0 m-3 px-3 py-1 bg-warning text-dark fw-bold rounded-pill shadow-sm">Featured</div>
-                    </div>
-                    <div class="card-body p-4">
-                        <h4 class="card-title fw-bold mb-2">Modern Villa Estate</h4>
-                        <p class="card-text text-muted mb-4"><i class="fas fa-map-marker-alt text-primary me-2"></i> Beverly Hills, CA</p>
-                        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                            <span class="fs-5 fw-bold text-primary">$2,450,000</span>
-                            <span class="text-muted"><i class="fas fa-bed me-1"></i> 4 <i class="fas fa-bath ms-3 me-1"></i> 3 <i class="fas fa-vector-square ms-3 me-1"></i> 3500 sqft</span>
+                <a href="{% url 'core:city_detail' city.id %}" class="text-decoration-none">
+                    <div class="card h-100 border-0 shadow-sm city-card rounded-4 overflow-hidden">
+                        <div class="position-relative overflow-hidden city-img-wrapper">
+                            <img src="{{ city.image.url }}" class="card-img-top city-img" alt="{{ city.name }}">
+                            <div class="city-overlay d-flex flex-column align-items-center justify-content-center">
+                                <h3 class="text-white fw-bold mb-2">{{ city.name }}</h3>
+                                <span class="badge bg-warning text-dark fs-6 px-3 py-2 rounded-pill">{{ city.project_count }} Project{{ city.project_count|pluralize }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <!-- Property Card 2 -->
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm property-card rounded-4 overflow-hidden">
-                    <div class="position-relative overflow-hidden property-img-wrapper">
-                         <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top property-img" alt="Luxury Penthouse">
-                    </div>
-                    <div class="card-body p-4">
-                        <h4 class="card-title fw-bold mb-2">Luxury Penthouse</h4>
-                        <p class="card-text text-muted mb-4"><i class="fas fa-map-marker-alt text-primary me-2"></i> Downtown NY</p>
-                        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                            <span class="fs-5 fw-bold text-primary">$3,100,000</span>
-                            <span class="text-muted"><i class="fas fa-bed me-1"></i> 3 <i class="fas fa-bath ms-3 me-1"></i> 3.5 <i class="fas fa-vector-square ms-3 me-1"></i> 2800 sqft</span>
-                        </div>
-                    </div>
-                </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p class="text-muted fs-5">No cities available yet. Check back soon!</p>
             </div>
-            <!-- Property Card 3 -->
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm property-card rounded-4 overflow-hidden">
-                    <div class="position-relative overflow-hidden property-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top property-img" alt="Suburban Family Home">
-                    </div>
-                    <div class="card-body p-4">
-                        <h4 class="card-title fw-bold mb-2">Suburban Retreat</h4>
-                        <p class="card-text text-muted mb-4"><i class="fas fa-map-marker-alt text-primary me-2"></i> Austin, TX</p>
-                        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                            <span class="fs-5 fw-bold text-primary">$1,250,000</span>
-                            <span class="text-muted"><i class="fas fa-bed me-1"></i> 5 <i class="fas fa-bath ms-3 me-1"></i> 4 <i class="fas fa-vector-square ms-3 me-1"></i> 4200 sqft</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="text-center mt-5">
-            <a href="{% url 'core:properties_page' %}" class="btn btn-outline-primary btn-lg custom-btn-outline px-5 py-3 rounded-pill fw-bold text-uppercase">View All Properties <i class="fas fa-arrow-right ms-2"></i></a>
+            <a href="{% url 'core:all_cities' %}" class="btn btn-outline-primary btn-lg custom-btn-outline px-5 py-3 rounded-pill fw-bold text-uppercase">View All Cities <i class="fas fa-arrow-right ms-2"></i></a>
         </div>
     </div>
 </section>
 
 <!-- Contact Us Section -->
-<section id="contact" class="py-5 bg-light">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
-                    <div class="row g-0">
-                        <div class="col-md-5 bg-primary text-white p-5 d-flex flex-column justify-content-center">
-                            <h3 class="fw-bold mb-4">Get In Touch</h3>
-                            <p class="mb-4 text-white-50">We'd love to hear from you. Fill out the form and our team will get back to you within 24 hours.</p>
-
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-map-marker-alt me-3 fs-5 text-warning"></i>
-                                <span>Tuvallo Avenue 123, NY</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-phone me-3 fs-5 text-warning"></i>
-                                <span>+01 234 567 88</span>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-envelope me-3 fs-5 text-warning"></i>
-                                <span>contact@tuvalocity.com</span>
-                            </div>
-                        </div>
-                        <div class="col-md-7 p-5">
-                            <h3 class="fw-bold mb-4 text-dark">Send us a Message</h3>
-
-                            {% if messages %}
-                                {% for message in messages %}
-                                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show rounded-3" role="alert">
-                                        {{ message }}
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
-
-                            <form method="POST" action="{% url 'core:landing_page' %}">
-                                {% csrf_token %}
-                                <div class="mb-3">
-                                    <label for="{{ form.name.id_for_label }}" class="form-label fw-semibold text-muted">Full Name</label>
-                                    {{ form.name }}
-                                    {% if form.name.errors %}
-                                        <div class="invalid-feedback d-block">{{ form.name.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                <div class="mb-3">
-                                    <label for="{{ form.email.id_for_label }}" class="form-label fw-semibold text-muted">Email Address</label>
-                                    {{ form.email }}
-                                    {% if form.email.errors %}
-                                        <div class="invalid-feedback d-block">{{ form.email.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                <div class="mb-3">
-                                    <label for="{{ form.phone.id_for_label }}" class="form-label fw-semibold text-muted">Phone Number</label>
-                                    {{ form.phone }}
-                                    {% if form.phone.errors %}
-                                        <div class="invalid-feedback d-block">{{ form.phone.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                <div class="mb-4">
-                                    <label for="{{ form.message.id_for_label }}" class="form-label fw-semibold text-muted">Your Message</label>
-                                    {{ form.message }}
-                                    {% if form.message.errors %}
-                                        <div class="invalid-feedback d-block">{{ form.message.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill fw-bold custom-btn">Submit Inquiry</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% include 'core/_contact_form.html' %}
 
 <!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

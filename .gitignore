@@ -9,3 +9,5 @@ env/
 
 # Python
 __pycache__
+
+*.sqlite

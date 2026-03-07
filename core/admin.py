@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Lead, City, Project
+from .models import Lead, City, Project, SiteSettings
 
 
 @admin.register(Lead)
@@ -37,3 +37,28 @@ class ProjectAdmin(admin.ModelAdmin):
         ),
         ("Payment", {"fields": ("payment_plan",)}),
     )
+
+
+@admin.register(SiteSettings)
+class SiteSettingsAdmin(admin.ModelAdmin):
+    fieldsets = (
+        (
+            "Google",
+            {
+                "fields": ("google_tag_id", "google_analytics_id"),
+            },
+        ),
+        (
+            "Social Pixels",
+            {
+                "fields": ("facebook_pixel_id", "tiktok_pixel_id"),
+            },
+        ),
+    )
+
+    def has_add_permission(self, request):
+        # Only allow one instance
+        return not SiteSettings.objects.exists()
+
+    def has_delete_permission(self, request, obj=None):
+        return False

@@ -65,3 +65,47 @@ class Project(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.city.name}"
+
+
+class SiteSettings(models.Model):
+    google_tag_id = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        help_text="Google Tag Manager ID (e.g. GTM-XXXXXXX)",
+    )
+    google_analytics_id = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        help_text="Google Analytics Measurement ID (e.g. G-XXXXXXXXXX)",
+    )
+    facebook_pixel_id = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        help_text="Facebook Pixel ID (e.g. 123456789012345)",
+    )
+    tiktok_pixel_id = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        help_text="TikTok Pixel ID (e.g. CXXXXXXXXXXXXXXXXX)",
+    )
+
+    class Meta:
+        verbose_name = "Site Settings"
+        verbose_name_plural = "Site Settings"
+
+    def __str__(self):
+        return "Site Settings"
+
+    def save(self, *args, **kwargs):
+        # Ensure only one instance exists (singleton)
+        self.pk = 1
+        super().save(*args, **kwargs)
+
+    @classmethod
+    def load(cls):
+        obj, _ = cls.objects.get_or_create(pk=1)
+        return obj

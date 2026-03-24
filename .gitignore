@@ -5,7 +5,7 @@ env/
 
 # Django
 .env
-.env.example
+
 
 # Python
 __pycache__

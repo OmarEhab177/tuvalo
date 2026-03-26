@@ -1,0 +1,31 @@
+/* ── Jazzmin Admin Custom Overrides ── */
+
+/* Login page: gray background, no huge image */
+.login-page,
+body.login-page {
+    background: #6c757d !important;
+    background-image: none !important;
+}
+
+/* Kill any login logo image */
+.login-logo img,
+.login-box .login-logo img {
+    display: none !important;
+}
+
+/* Keep the card clean */
+.login-box {
+    width: 360px;
+    margin: 2rem auto;
+}
+
+/* Sidebar logo - keep it small */
+.brand-link .brand-image {
+    max-height: 40px !important;
+    width: auto !important;
+}
+
+.brand-link .brand-text {
+    font-weight: 700;
+    font-size: 1.1rem;
+}

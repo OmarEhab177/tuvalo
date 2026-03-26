@@ -1,0 +1,387 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Image Section -->
+<section class="about-hero">
+    <!-- Desktop image -->
+    <img src="{% static 'core/images/about-desktop.webp' %}"
+         class="about-hero__img about-hero__img--desktop"
+         alt="معرض Tuvalo Prime Gate">
+    <!-- Mobile image -->
+    <img src="{% static 'core/images/about-mobile.webp' %}"
+         class="about-hero__img about-hero__img--mobile"
+         alt="معرض Tuvalo Prime Gate">
+</section>
+
+<!-- About Content Section -->
+<section class="py-5 about-content-section" dir="rtl">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+
+                <!-- Alert Badge -->
+                <div class="text-center mb-4">
+                    <span class="about-badge">🚨 حدث مش بيتكرر كتير! 🚨</span>
+                </div>
+
+                <!-- Main Heading -->
+                <div class="text-center mb-5">
+                    <h1 class="about-main-title">
+                        🔥 لأول مرة في الدلتا 🔥
+                    </h1>
+                    <div class="about-discount-badge">
+                        <span>خصومات حقيقية توصل لـ </span>
+                        <strong>40%</strong>
+                        <span> 😱</span>
+                    </div>
+                </div>
+
+                <!-- Event Details Card -->
+                <div class="about-card mb-4">
+                    <div class="about-card__header">
+                        <h2 class="about-card__title">تفاصيل الحدث</h2>
+                    </div>
+                    <div class="about-card__body">
+                        <div class="about-detail-item">
+                            <span class="about-detail-icon">📅</span>
+                            <div>
+                                <span class="about-detail-label">الموعد</span>
+                                <span class="about-detail-value">من 9 لـ 11 أبريل</span>
+                            </div>
+                        </div>
+                        <div class="about-detail-item">
+                            <span class="about-detail-icon">📍</span>
+                            <div>
+                                <span class="about-detail-label">المكان</span>
+                                <span class="about-detail-value">معرض Tuvalo Prime Gate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="about-card mb-4">
+                    <div class="about-card__header">
+                        <h2 class="about-card__title">🏡 أقوى الفرص العقارية</h2>
+                    </div>
+                    <div class="about-card__body">
+                        <p class="about-desc-text">
+                            مع أكبر شركات التطوير في:
+                        </p>
+                        <div class="about-locations-grid">
+                            <div class="about-location-item">
+                                <span class="about-location-icon">📌</span>
+                                <span>القاهرة</span>
+                            </div>
+                            <div class="about-location-item">
+                                <span class="about-location-icon">📌</span>
+                                <span>العاصمة الإدارية</span>
+                            </div>
+                            <div class="about-location-item">
+                                <span class="about-location-icon">📌</span>
+                                <span>التجمع</span>
+                            </div>
+                            <div class="about-location-item">
+                                <span class="about-location-icon">📌</span>
+                                <span>دمياط الجديدة</span>
+                            </div>
+                            <div class="about-location-item">
+                                <span class="about-location-icon">📌</span>
+                                <span>المنصورة الجديدة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offers Card -->
+                <div class="about-card about-card--highlight mb-4">
+                    <div class="about-card__header">
+                        <h2 class="about-card__title">💰 العروض الحصرية</h2>
+                    </div>
+                    <div class="about-card__body">
+                        <div class="about-offer-item">
+                            <span class="about-offer-icon">💰</span>
+                            <span>خصومات من <strong>30%</strong> لـ <strong>40%</strong></span>
+                        </div>
+                        <div class="about-offer-item">
+                            <span class="about-offer-icon">💡</span>
+                            <span>أنظمة سداد مرنة تناسب كل العملاء</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Block -->
+                <div class="about-cta-block mb-4">
+                    <div class="about-cta-item">
+                        <span class="about-cta-icon">🎯</span>
+                        <span>سواء هتسكن أو تستثمر… دي فرصتك الصح</span>
+                    </div>
+                    <div class="about-cta-item">
+                        <span class="about-cta-icon">🎯</span>
+                        <span>عروض حصرية متاحة أيام المعرض فقط!</span>
+                    </div>
+                </div>
+
+                <!-- Urgency Block -->
+                <div class="about-urgency-block mb-5">
+                    <p class="about-urgency-text">
+                        ⚡ العدد محدود… والفرص بتخلص بسرعة!
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="text-center about-action-buttons">
+                    <p class="about-action-label mb-4">📞 احجز مكانك دلوقتي واستفيد بأقوى العروض</p>
+                    <a href="https://wa.me/+201070500284"
+                       class="btn about-btn-whatsapp me-3 mb-3"
+                       target="_blank">
+                        <i class="fab fa-whatsapp me-2"></i>
+                        كلمنا على واتساب
+                    </a>
+                    <a href="{% url 'core:landing_page' %}#contact"
+                       class="btn about-btn-contact mb-3">
+                        <i class="fas fa-envelope me-2"></i>
+                        ابعتلنا رسالة
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ─── Hero ─── */
+    .about-hero {
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    .about-hero__img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    .about-hero__img--mobile  { display: none; }
+    .about-hero__img--desktop { display: block; }
+
+    @media (max-width: 767px) {
+        .about-hero__img--desktop { display: none; }
+        .about-hero__img--mobile  { display: block; }
+    }
+
+    /* ─── Section ─── */
+    .about-content-section {
+        background: linear-gradient(135deg, #f8f9ff 0%, #eef1fb 100%);
+        font-family: 'Outfit', 'Cairo', sans-serif;
+    }
+
+    /* ─── Badge ─── */
+    .about-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #ff4444, #cc0000);
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        padding: 0.6rem 1.4rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(255, 68, 68, 0.35);
+        animation: pulse-badge 2s infinite;
+    }
+    @keyframes pulse-badge {
+        0%, 100% { transform: scale(1); }
+        50%       { transform: scale(1.04); }
+    }
+
+    /* ─── Main Title ─── */
+    .about-main-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #0b132b;
+        margin-bottom: 1rem;
+    }
+    .about-discount-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #ff6b35, #f7931e);
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: 700;
+        padding: 0.7rem 2rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+    }
+    .about-discount-badge strong {
+        font-size: 1.7rem;
+    }
+
+    /* ─── Cards ─── */
+    .about-card {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 24px rgba(11, 19, 43, 0.08);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .about-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 32px rgba(11, 19, 43, 0.12);
+    }
+    .about-card--highlight {
+        border: 2px solid #f7931e;
+    }
+    .about-card__header {
+        background: linear-gradient(135deg, #0b132b, #1c2541);
+        padding: 1rem 1.5rem;
+    }
+    .about-card__title {
+        color: #fff;
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .about-card__body {
+        padding: 1.5rem;
+    }
+
+    /* ─── Detail Items ─── */
+    .about-detail-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .about-detail-item:last-child { border-bottom: none; }
+    .about-detail-icon { font-size: 1.5rem; min-width: 2rem; text-align: center; }
+    .about-detail-label {
+        display: block;
+        font-size: 0.8rem;
+        color: #999;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+    }
+    .about-detail-value {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0b132b;
+    }
+
+    /* ─── Locations ─── */
+    .about-desc-text { color: #555; margin-bottom: 1rem; font-size: 1rem; }
+    .about-locations-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    .about-location-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #f8f9ff;
+        padding: 0.6rem 1rem;
+        border-radius: 10px;
+        font-weight: 600;
+        color: #0b132b;
+        font-size: 0.95rem;
+        transition: background 0.2s;
+    }
+    .about-location-item:hover { background: #e8eeff; }
+    .about-location-icon { font-size: 1.1rem; }
+
+    /* ─── Offers ─── */
+    .about-offer-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.6rem 0;
+        border-bottom: 1px dashed #ffe0c0;
+        font-size: 1.05rem;
+        color: #333;
+    }
+    .about-offer-item:last-child { border-bottom: none; }
+    .about-offer-icon { font-size: 1.3rem; min-width: 1.8rem; text-align: center; }
+    .about-offer-item strong { color: #f7931e; }
+
+    /* ─── CTA Block ─── */
+    .about-cta-block {
+        background: linear-gradient(135deg, #e8f4e8, #d4edda);
+        border-right: 4px solid #28a745;
+        border-radius: 12px;
+        padding: 1.2rem 1.5rem;
+    }
+    .about-cta-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.4rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #155724;
+    }
+    .about-cta-icon { font-size: 1.2rem; margin-top: 2px; }
+
+    /* ─── Urgency ─── */
+    .about-urgency-block {
+        background: linear-gradient(135deg, #fff3cd, #ffeeba);
+        border-right: 4px solid #ffc107;
+        border-radius: 12px;
+        padding: 1rem 1.5rem;
+        text-align: center;
+    }
+    .about-urgency-text {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #856404;
+        margin: 0;
+    }
+
+    /* ─── Action Buttons ─── */
+    .about-action-label {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #0b132b;
+    }
+    .about-btn-whatsapp {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .about-btn-whatsapp:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+    .about-btn-contact {
+        background: linear-gradient(135deg, #0b132b, #1c2541);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(11, 19, 43, 0.3);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .about-btn-contact:hover {
+        color: #ffc107;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(11, 19, 43, 0.4);
+    }
+
+    @media (max-width: 576px) {
+        .about-main-title   { font-size: 1.6rem; }
+        .about-locations-grid { grid-template-columns: 1fr; }
+        .about-btn-whatsapp,
+        .about-btn-contact  { width: 100%; display: block; margin-left: 0 !important; }
+    }
+</style>
+{% endblock %}

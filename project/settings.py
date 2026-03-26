@@ -34,7 +34,100 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",") if os.getenv("ALLOWED_
 
 # Application definition
 
+JAZZMIN_SETTINGS = {
+    # ── Branding ──────────────────────────────────────────────────────────
+    "site_title": "Tuvalo Admin",
+    "site_header": "Tuvalo",
+    "site_brand": "Tuvalo",
+    "site_logo": "core/images/tuvalo_logo.png",
+    "site_logo_classes": "img-circle",
+    "login_logo": "",
+    "login_logo_dark": None,
+    "site_icon": None,
+    "welcome_sign": "Welcome to Tuvalo Admin",
+    "copyright": "Tuvalo Real Estate",
+
+    # ── Search ────────────────────────────────────────────────────────────
+    "search_model": ["core.City", "core.Project", "core.Lead"],
+
+    # ── Top menu ─────────────────────────────────────────────────────────
+    "topmenu_links": [
+        {"name": "🏠 View Site", "url": "/", "new_window": True},
+        {"model": "core.Lead"},
+    ],
+
+    # ── User menu ─────────────────────────────────────────────────────────
+    "usermenu_links": [
+        {"name": "View Site", "url": "/", "new_window": True},
+    ],
+
+    # ── Sidebar navigation ───────────────────────────────────────────────
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "hide_apps": [],
+    "hide_models": [],
+
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "core.City": "fas fa-city",
+        "core.Project": "fas fa-building",
+        "core.Lead": "fas fa-envelope-open-text",
+        "core.SiteSettings": "fas fa-cog",
+    },
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+
+    # ── UI tweaks ─────────────────────────────────────────────────────────
+    "related_modal_active": True,
+    "custom_css": "core/css/admin_custom.css",
+    "custom_js": None,
+    "use_google_fonts_cdn": True,
+    "show_ui_builder": False,
+
+    # ── Change view ───────────────────────────────────────────────────────
+    "changeform_format": "horizontal_tabs",
+    "changeform_format_overrides": {
+        "auth.user": "collapsible",
+        "auth.group": "vertical_tabs",
+    },
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-primary",
+    "accent": "accent-primary",
+    "navbar": "navbar-dark",
+    "no_navbar_border": False,
+    "navbar_fixed": True,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "default",
+    "default_theme_mode": "light",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-outline-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success",
+    },
+}
+
 INSTALLED_APPS = [
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

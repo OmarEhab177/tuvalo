@@ -55,6 +55,10 @@ def city_detail(request, city_id):
     )
 
 
+def about_page(request):
+    return render(request, "core/about.html")
+
+
 def project_detail(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
 
